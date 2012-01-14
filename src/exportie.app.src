@@ -1,0 +1,11 @@
+{application, exportie,
+ [
+  {description, "In-place export parse transformation"},
+  {vsn, git},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {env, []}
+ ]}.
