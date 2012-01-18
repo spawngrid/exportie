@@ -23,7 +23,7 @@ export@(f(A)) when is_binary(A) ->
      [A].
 ```
 
-to
+to this:
 
 ```erlang
 f(A) when is_list(A) ->
