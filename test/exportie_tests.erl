@@ -35,3 +35,5 @@ guard_test() ->
     ?assertEqual(yes,?MODULE:c(1)),
     ?assertEqual(no,?MODULE:c(2)).
     
+custom_test() ->
+    ?assertEqual(1,exportie_custom:f()).

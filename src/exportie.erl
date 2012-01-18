@@ -6,6 +6,7 @@
           function_name,
           arity,
           exports = [],
+          export = 'export@',
           options
         }).
 
@@ -31,8 +32,12 @@ transform(Fun, State, Forms, Context) when is_list(Forms) ->
                                                Context),
     {parse_trans:revert(Form1),false,State1}.
 
-do_transform(function,{function, Line, export@, 1, Cs}, Context, 
-             #state{ exports = Exports} = State) ->
+do_transform(attribute,{attribute, _, exportie, Custom}=Form,
+             _Context, #state{} = State) ->
+    {Form, false, State#state{ export = Custom }};
+
+do_transform(function,{function, Line, Export, 1, Cs}, Context, 
+             #state{ exports = Exports, export = Export } = State) ->
     {Cs1, _Rec, State1} = transform(fun export_transform/4, State, Cs, Context),
     Form = {function, Line, State1#state.function_name, State1#state.arity, Cs1},
     {Form, false, State#state{

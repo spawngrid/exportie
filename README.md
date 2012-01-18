@@ -42,4 +42,16 @@ That's it! All you have to do to enable this is to add this line below to your m
 
 Neat, eh?
 
-              
+Extra Goodies
+-------------
+
+### Customizable export@
+
+Don't like `export@` syntax? No problem. Exportie allows you to customize this, just use `-exportie` module attribute to define one:
+
+```erlang
+-exportie(' ').
+
+' '(f(A)) -> A.
+```          
+
