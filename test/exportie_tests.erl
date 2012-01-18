@@ -2,21 +2,21 @@
 -compile({parse_transform,exportie}).
 -include_lib("eunit/include/eunit.hrl").
 
-export(f(1)) ->
+export@(f(1)) ->
     1;
-export(f(2)) ->
+export@(f(2)) ->
     2;
-export(f({A})) ->
+export@(f({A})) ->
     A;
-export(f(A)) ->
+export@(f(A)) ->
     A.
 
-export(z()) ->
+export@(z()) ->
     1.
 
-export(c(A)) when A == 1 ->
+export@(c(A)) when A == 1 ->
     yes;
-export(c(A)) when A == 2 ->
+export@(c(A)) when A == 2 ->
     no.
 
 

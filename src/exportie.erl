@@ -31,7 +31,7 @@ transform(Fun, State, Forms, Context) when is_list(Forms) ->
                                                Context),
     {parse_trans:revert(Form1),false,State1}.
 
-do_transform(function,{function, Line, export, 1, Cs}, Context, 
+do_transform(function,{function, Line, export@, 1, Cs}, Context, 
              #state{ exports = Exports} = State) ->
     {Cs1, _Rec, State1} = transform(fun export_transform/4, State, Cs, Context),
     Form = {function, Line, State1#state.function_name, State1#state.arity, Cs1},
