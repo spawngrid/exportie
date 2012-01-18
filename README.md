@@ -29,7 +29,7 @@ to
 f(A) when is_list(A) ->
      A;
 f(A) when is_binary(A) ->
-     [A}.
+     [A].
 ```
 
 and automatically export `f/1`.
