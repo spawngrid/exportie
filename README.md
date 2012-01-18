@@ -26,13 +26,15 @@ export@(f(A)) when is_binary(A) ->
 to this:
 
 ```erlang
+-export([f/1]).
+
+%% ...
+
 f(A) when is_list(A) ->
      A;
 f(A) when is_binary(A) ->
      [A].
 ```
-
-and automatically export `f/1`.
 
 That's it! All you have to do to enable this is to add this line below to your module:
 
