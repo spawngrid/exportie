@@ -11,6 +11,9 @@ export@(f({A})) ->
 export@(f(A)) ->
     A.
 
+export@(f(A,B)) ->
+    {A,B}.
+
 export@(z()) ->
     1.
 
@@ -25,6 +28,7 @@ simple_test() ->
     ?assertEqual(2,?MODULE:f(2)),
     ?assertEqual(3,?MODULE:f(3)),
     ?assertEqual(3,?MODULE:f({3})),
+    ?assertEqual({yes, ofcourse},?MODULE:f({yes,ofcourse})),
     ?assertEqual(1,?MODULE:z()).
     
 guard_test() ->
